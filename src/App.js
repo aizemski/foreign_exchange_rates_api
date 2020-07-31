@@ -4,7 +4,6 @@ import './App.css';
 import { getSymbols, getRateWithBase } from './context/fetchData';
 import { Currencies } from './components/Currencies';
 function App() {
-    const [forex, setForex] = useState('');
     const [symbols, setSymbols] = useState([]);
     const [selectedBase, setSelectedBase] = useState('');
     const [selectedSymbol, setSelectedSymbol] = useState('');
@@ -28,7 +27,12 @@ function App() {
                 <>
                     <form>
                         <label for="currencies-base">Choose a base:</label>
-                        <select id="currencies-base" name="base">
+                        <select
+                            id="currencies-base"
+                            name="base"
+                            onChange={(e) => {
+                                setSelectedBase(e.target.value);
+                            }}>
                             {symbols.map((symbol) => {
                                 if (symbol == selectedBase)
                                     return (
@@ -40,7 +44,12 @@ function App() {
                             })}
                         </select>
                         <label for="currencies-symbols">Choose a symbol:</label>
-                        <select id="currencies-symbols" name="symbols">
+                        <select
+                            id="currencies-symbols"
+                            name="symbols"
+                            onChange={(e) => {
+                                setSelectedSymbol(e.target.value);
+                            }}>
                             <option value="All">All</option>
                             {symbols.map((symbol) => {
                                 if (symbol == selectedSymbol)
@@ -52,9 +61,22 @@ function App() {
                                 return <option value={symbol}>{symbol}</option>;
                             })}
                         </select>
-                        <input type="submit"></input>
+                        {selectedSymbol == selectedBase ? (
+                            <input type="submit" disabled></input>
+                        ) : (
+                            <input type="submit"></input>
+                        )}
                     </form>
-                    <Currencies />
+                    {selectedSymbol && selectedBase ? (
+                        <Currencies
+                            base={selectedBase}
+                            symbols={
+                                selectedSymbol == 'All' ? '' : selectedSymbol
+                            }
+                        />
+                    ) : (
+                        ''
+                    )}
                 </>
             ) : (
                 <p>Symbols haven't loaded</p>

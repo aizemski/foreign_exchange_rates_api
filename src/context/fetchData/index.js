@@ -7,12 +7,12 @@ export const getSymbols = async () => {
     for (var symbol in fetchData.rates) {
         symbols.push(symbol);
     }
+    symbols.sort();
     return symbols;
 };
 
-export const getRateWithBase = async (base) => {
-    const fetchData = await getData(base);
-    console.log(fetchData);
+export const getRateWithBase = async (params) => {
+    const fetchData = await getData(params);
 };
 
 const getData = async (params) => {
