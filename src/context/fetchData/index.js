@@ -13,10 +13,14 @@ export const getSymbols = async () => {
 
 export const getRateWithBase = async (params) => {
     const fetchData = await getData(params);
+    var result = [];
+    for (var i in fetchData.rates) {
+        result.push([{ symbol: i, rate: fetchData.rates[i] }]);
+    }
+    return result;
 };
 
 const getData = async (params) => {
-    console.log(params);
     return await axios
         .get('https://api.ratesapi.io/api/latest', { params })
         .then((response) => {
