@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/foreign_exchange_rates_api/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/foreign_exchange_rates_api/static/js/main.fe0ae806.chunk.js",
+    "main.js.map": "/foreign_exchange_rates_api/static/js/main.fe0ae806.chunk.js.map",
+    "runtime-main.js": "/foreign_exchange_rates_api/static/js/runtime-main.cb60cd67.js",
+    "runtime-main.js.map": "/foreign_exchange_rates_api/static/js/runtime-main.cb60cd67.js.map",
+    "static/js/2.735c7d41.chunk.js": "/foreign_exchange_rates_api/static/js/2.735c7d41.chunk.js",
+    "static/js/2.735c7d41.chunk.js.map": "/foreign_exchange_rates_api/static/js/2.735c7d41.chunk.js.map",
+    "index.html": "/foreign_exchange_rates_api/index.html",
+    "precache-manifest.7f2470c7e49fdd3c79bc940b0e3dd539.js": "/foreign_exchange_rates_api/precache-manifest.7f2470c7e49fdd3c79bc940b0e3dd539.js",
+    "service-worker.js": "/foreign_exchange_rates_api/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/foreign_exchange_rates_api/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.735c7d41.chunk.js.LICENSE.txt": "/foreign_exchange_rates_api/static/js/2.735c7d41.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cb60cd67.js",
+    "static/js/2.735c7d41.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.fe0ae806.chunk.js"
+  ]
+}
