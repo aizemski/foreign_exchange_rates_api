@@ -14,9 +14,9 @@ export const Currencies = (base, symbols) => {
         <div className="result-container">
             {data &&
                 data.map((currency) => {
-                    console.log(currency);
                     return (
                         <Currency
+                            key={currency[0].symbol}
                             symbol={currency[0].symbol}
                             rate={currency[0].rate}
                         />

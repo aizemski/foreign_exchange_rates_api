@@ -26,7 +26,7 @@ function App() {
             {symbols ? (
                 <>
                     <form>
-                        <label for="currencies-base">Choose a base:</label>
+                        <label htmlFor="currencies-base">Choose a base:</label>
                         <select
                             id="currencies-base"
                             name="base"
@@ -36,14 +36,23 @@ function App() {
                             {symbols.map((symbol) => {
                                 if (symbol == selectedBase)
                                     return (
-                                        <option value={symbol} selected>
+                                        <option
+                                            value={symbol}
+                                            key={symbol}
+                                            selected>
                                             {symbol}
                                         </option>
                                     );
-                                return <option value={symbol}>{symbol}</option>;
+                                return (
+                                    <option value={symbol} key={symbol}>
+                                        {symbol}
+                                    </option>
+                                );
                             })}
                         </select>
-                        <label for="currencies-symbols">Choose a symbol:</label>
+                        <label htmlFor="currencies-symbols">
+                            Choose a symbol:
+                        </label>
                         <select
                             id="currencies-symbols"
                             name="symbols"
@@ -54,11 +63,18 @@ function App() {
                             {symbols.map((symbol) => {
                                 if (symbol == selectedSymbol)
                                     return (
-                                        <option value={symbol} selected>
+                                        <option
+                                            value={symbol}
+                                            key={symbol}
+                                            selected>
                                             {symbol}
                                         </option>
                                     );
-                                return <option value={symbol}>{symbol}</option>;
+                                return (
+                                    <option value={symbol} key={symbol}>
+                                        {symbol}
+                                    </option>
+                                );
                             })}
                         </select>
                         {selectedSymbol == selectedBase ? (
