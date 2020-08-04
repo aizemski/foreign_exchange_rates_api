@@ -1,9 +1,10 @@
 import React from 'react';
-
+import getSymbolFromCurrency from 'currency-symbol-map';
 export const Currency = (props) => {
     return (
-        <div className="currency-container">
-            {props.symbol + ' ' + props.rate}
-        </div>
+        <tr className="currency-container">
+            <td>{props.rate}</td>
+            <td>{props.symbol + ' ' + getSymbolFromCurrency(props.symbol)}</td>
+        </tr>
     );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getRateWithBase } from '../../context/fetchData';
 import { Currency } from './Currency';
-
+import './style.css';
 export const Currencies = (base, symbols) => {
     const [data, setData] = useState('');
     useEffect(() => {
@@ -11,7 +11,9 @@ export const Currencies = (base, symbols) => {
         fetchResults();
     }, []);
     return (
-        <div className="result-container">
+        <table className="result-container">
+            <th>Rate</th>
+            <th>Currency</th>
             {data &&
                 data.map((currency) => {
                     if (currency[0].rate != 1)
@@ -23,6 +25,6 @@ export const Currencies = (base, symbols) => {
                             />
                         );
                 })}
-        </div>
+        </table>
     );
 };
