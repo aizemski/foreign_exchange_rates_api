@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import getSymbolFromCurrency from 'currency-symbol-map';
 import './App.css';
-import { getSymbols, getRateWithBase } from './context/fetchData';
+import { getSymbols } from './context/fetchData';
 import { Currencies } from './components/Currencies';
 function App() {
     const [symbols, setSymbols] = useState([]);
@@ -34,7 +33,7 @@ function App() {
                                 setSelectedBase(e.target.value);
                             }}>
                             {symbols.map((symbol) => {
-                                if (symbol == selectedBase)
+                                if (symbol === selectedBase)
                                     return (
                                         <option
                                             value={symbol}
@@ -61,7 +60,7 @@ function App() {
                             }}>
                             <option value="All">All</option>
                             {symbols.map((symbol) => {
-                                if (symbol == selectedSymbol)
+                                if (symbol === selectedSymbol)
                                     return (
                                         <option
                                             value={symbol}
@@ -77,7 +76,8 @@ function App() {
                                 );
                             })}
                         </select>
-                        {selectedSymbol == selectedBase ? (
+                        {selectedSymbol === selectedBase &&
+                        selectedSymbol !== '' ? (
                             <input type="submit" disabled></input>
                         ) : (
                             <input type="submit"></input>
@@ -87,7 +87,7 @@ function App() {
                         <Currencies
                             base={selectedBase}
                             symbols={
-                                selectedSymbol == 'All' ? '' : selectedSymbol
+                                selectedSymbol === 'All' ? '' : selectedSymbol
                             }
                         />
                     ) : (
